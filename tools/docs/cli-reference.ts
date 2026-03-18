@@ -4,8 +4,20 @@ import {
 	cliExamples,
 	cliFlags,
 	cliName,
-	defaultName,
+	toCliFlagName,
 } from '../../source/cli-metadata.js';
+
+function toOptionRows(): string {
+	return Object.entries(cliFlags)
+		.map(([name, definition]) => {
+			const defaultValue =
+				definition.default === undefined ? '-' : String(definition.default);
+			return `| \`--${toCliFlagName(name)}\` | \`${
+				definition.type
+			}\` | \`${defaultValue}\` | ${definition.description} |`;
+		})
+		.join('\n');
+}
 
 export function buildCliReferenceMarkdown(): string {
 	return `# CLI Reference
@@ -13,14 +25,15 @@ export function buildCliReferenceMarkdown(): string {
 ## Usage
 
 \`\`\`bash
-$ ${cliName}
+$ ${cliName} --url <m3u8-url> [options]
+$ ${cliName} --page-url <page-url> [options]
 \`\`\`
 
 ## Options
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| \`--name\` | \`${cliFlags.name.type}\` | \`${defaultName}\` | ${cliFlags.name.description} |
+${toOptionRows()}
 
 ## Examples
 

@@ -1,22 +1,22 @@
-[**react-cli-quick-starter**](../README.md)
+[**av-downloader**](../README.md)
 
 ***
 
-[react-cli-quick-starter](../README.md) / CliFlagDefinition
+[av-downloader](../README.md) / CliFlagDefinition
 
 # Type Alias: CliFlagDefinition
 
 > **CliFlagDefinition** = `object`
 
-Defined in: [cli-metadata.ts:11](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L11)
+Defined in: [source/cli-metadata.ts:5](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L5)
 
 ## Properties
 
-### default
+### default?
 
-> `readonly` **default**: `string`
+> `readonly` `optional` **default**: `string` \| `number` \| `boolean`
 
-Defined in: [cli-metadata.ts:14](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L14)
+Defined in: [source/cli-metadata.ts:8](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L8)
 
 ***
 
@@ -24,12 +24,20 @@ Defined in: [cli-metadata.ts:14](https://github.com/AstroAir/react-cli-quick-sta
 
 > `readonly` **description**: `string`
 
-Defined in: [cli-metadata.ts:13](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L13)
+Defined in: [source/cli-metadata.ts:7](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L7)
+
+***
+
+### shortFlag?
+
+> `readonly` `optional` **shortFlag**: `string`
+
+Defined in: [source/cli-metadata.ts:9](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L9)
 
 ***
 
 ### type
 
-> `readonly` **type**: `"string"`
+> `readonly` **type**: `"string"` \| `"number"` \| `"boolean"`
 
-Defined in: [cli-metadata.ts:12](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L12)
+Defined in: [source/cli-metadata.ts:6](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L6)

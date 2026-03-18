@@ -1,17 +1,98 @@
 #!/usr/bin/env node
 import meow from 'meow';
-import {render} from 'ink';
-import App from './app.js';
 import {buildCliHelpText, cliFlags} from './cli-metadata.js';
+import {collectMissingInput} from './cli-ui/interactive-input.js';
+import {runInteractivePipeline} from './cli-ui/interactive-session.js';
+import {
+	isInteractiveTerminal,
+	printNonInteractiveSummary,
+	silentPipelineLogger,
+} from './cli-ui/non-interactive.js';
+import {CliValidationError} from './downloader/errors.js';
+import {parseDownloaderOptions} from './downloader/options.js';
+import {runDownloadPipeline} from './downloader/pipeline.js';
 
 const cli = meow(buildCliHelpText(), {
 	importMeta: import.meta,
+	autoHelp: true,
 	flags: {
-		name: {
-			type: cliFlags.name.type,
-			default: cliFlags.name.default,
+		url: {
+			type: cliFlags.url.type,
+			shortFlag: cliFlags.url.shortFlag,
+		},
+		pageUrl: {
+			type: cliFlags.pageUrl.type,
+			shortFlag: cliFlags.pageUrl.shortFlag,
+		},
+		out: {
+			type: cliFlags.out.type,
+			shortFlag: cliFlags.out.shortFlag,
+			default: cliFlags.out.default,
+		},
+		workdir: {
+			type: cliFlags.workdir.type,
+			default: cliFlags.workdir.default,
+		},
+		concurrency: {
+			type: cliFlags.concurrency.type,
+			shortFlag: cliFlags.concurrency.shortFlag,
+			default: cliFlags.concurrency.default,
+		},
+		retries: {
+			type: cliFlags.retries.type,
+			default: cliFlags.retries.default,
+		},
+		timeout: {
+			type: cliFlags.timeout.type,
+			default: cliFlags.timeout.default,
+		},
+		referer: {
+			type: cliFlags.referer.type,
+		},
+		scriptLimit: {
+			type: cliFlags.scriptLimit.type,
+			default: cliFlags.scriptLimit.default,
+		},
+		sniff: {
+			type: cliFlags.sniff.type,
+			default: cliFlags.sniff.default,
+		},
+		maxMiss: {
+			type: cliFlags.maxMiss.type,
+			default: cliFlags.maxMiss.default,
+		},
+		keyUrl: {
+			type: cliFlags.keyUrl.type,
 		},
 	},
 });
 
-render(<App name={cli.flags.name} />);
+try {
+	const interactive = isInteractiveTerminal();
+	const flags = interactive ? await collectMissingInput(cli.flags) : cli.flags;
+	const options = parseDownloaderOptions(flags);
+
+	if (interactive) {
+		await runInteractivePipeline(options);
+	} else {
+		const result = await runDownloadPipeline(options, {}, silentPipelineLogger);
+		printNonInteractiveSummary(result);
+	}
+} catch (error: unknown) {
+	if (error instanceof CliValidationError) {
+		console.error(`[error] ${error.message}`);
+		console.error('Run with --help to see valid downloader flags.');
+		process.exitCode = 1;
+	} else if (
+		error instanceof Error &&
+		error.message === 'Interactive input was canceled.'
+	) {
+		console.error('[error] Interactive input was canceled by the user.');
+		process.exitCode = 1;
+	} else {
+		const message =
+			error instanceof Error ? error.stack ?? error.message : String(error);
+		console.error('[error]', message);
+		process.exitCode = 1;
+	}
+}

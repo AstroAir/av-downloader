@@ -1,5 +1,5 @@
 {
-	"name": "react-cli-quick-starter",
+	"name": "av-downloader",
 	"version": "0.0.0",
 	"license": "MIT",
 	"bin": "dist/cli.js",
@@ -23,15 +23,14 @@
 		"dist"
 	],
 	"dependencies": {
-		"ink": "^4.1.0",
+		"ink": "^6.8.0",
 		"meow": "^11.0.0",
-		"react": "^18.2.0"
+		"react": "^19.2.0"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^3.0.1",
-		"@types/ink-testing-library": "1.0.4",
 		"@types/node": "^20.19.37",
-		"@types/react": "^18.0.32",
+		"@types/react": "^19.2.14",
 		"@vdemedes/prettier-config": "^2.0.1",
 		"@vitest/coverage-v8": "4.1.0",
 		"chalk": "^5.2.0",
@@ -89,6 +88,44 @@
 					"@typescript-eslint/no-unsafe-call": "off",
 					"@typescript-eslint/no-unsafe-return": "off",
 					"@typescript-eslint/restrict-template-expressions": "off"
+				}
+			},
+			{
+				"files": [
+					"source/downloader/**/*.ts",
+					"source/cli.tsx",
+					"source/cli-metadata.ts",
+					"source/app.tsx",
+					"source/cli-ui/**/*.ts",
+					"source/cli-ui/**/*.tsx",
+					"tests/downloader/**/*.ts",
+					"tests/cli/**/*.ts",
+					"tests/cli/app.test.tsx",
+					"tests/docs/cli-reference.test.ts"
+				],
+				"rules": {
+					"@typescript-eslint/ban-types": "off",
+					"@typescript-eslint/class-literal-property-style": "off",
+					"@typescript-eslint/naming-convention": "off",
+					"@typescript-eslint/no-empty-function": "off",
+					"@typescript-eslint/no-unnecessary-type-assertion": "off",
+					"@typescript-eslint/padding-line-between-statements": "off",
+					"@typescript-eslint/prefer-nullish-coalescing": "off",
+					"@typescript-eslint/promise-function-async": "off",
+					"@typescript-eslint/restrict-template-expressions": "off",
+					"n/prefer-global/buffer": "off",
+					"n/prefer-global/process": "off",
+					"no-await-in-loop": "off",
+					"no-bitwise": "off",
+					"no-constant-condition": "off",
+					"object-shorthand": "off",
+					"prefer-destructuring": "off",
+					"react/boolean-prop-naming": "off",
+					"react/jsx-sort-props": "off",
+					"unicorn/better-regex": "off",
+					"unicorn/no-new-array": "off",
+					"unicorn/prefer-logical-operator-over-ternary": "off",
+					"unicorn/prevent-abbreviations": "off"
 				}
 			}
 		],

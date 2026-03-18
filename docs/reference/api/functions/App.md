@@ -1,18 +1,18 @@
-[**react-cli-quick-starter**](../README.md)
+[**av-downloader**](../README.md)
 
 ***
 
-[react-cli-quick-starter](../README.md) / App
+[av-downloader](../README.md) / App
 
 # Function: App()
 
-> **App**(`props`): `Element`
+> **App**(`__namedParameters`): `Element`
 
-Defined in: [app.tsx:8](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/app.tsx#L8)
+Defined in: [source/app.tsx:15](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/app.tsx#L15)
 
 ## Parameters
 
-### props
+### \_\_namedParameters
 
 `Props`
 

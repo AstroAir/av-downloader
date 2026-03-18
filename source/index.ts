@@ -4,6 +4,6 @@ export {
 	cliName,
 	cliExamples,
 	cliFlags,
-	defaultName,
 } from './cli-metadata.js';
-export type {CliFlagDefinition} from './cli-metadata.js';
+export type {CliFlagDefinition, CliFlagName} from './cli-metadata.js';
+export * from './downloader/index.js';

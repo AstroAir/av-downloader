@@ -1,24 +1,20 @@
-# react-cli-quick-starter
+# av-downloader
 
-A production-ready **React Ink CLI template** focused on maintainability, quality checks, and clear documentation architecture.
+A TypeScript-first **HLS/m3u8 downloader CLI** with playlist discovery, AES-128 decryption support, deterministic segment ordering, and ffmpeg fallback behavior.
 
 [中文文档](./README_zh.md)
 
-## What This Template Includes
+## What This Project Includes
 
-- React Ink CLI baseline (`ink` + `meow`)
-- TypeScript compilation pipeline
-- Formatting and lint quality gates (`prettier` + `xo`)
-- GitHub Actions CI workflow (`.github/workflows/ci.yml`)
-- Built-in documentation architecture for onboarding and long-term project governance
+- Direct playlist mode (`--url`) and page discovery mode (`--page-url`)
+- Master playlist resolution to highest-bandwidth variant
+- AES-128 segment decryption with key override support (`--key-url`)
+- Optional segment sniffing with deterministic dedupe and ordering
+- Segment merge and MP4 remux via ffmpeg with `.ts` fallback when ffmpeg is unavailable
 
-## When To Use This Template
+## Breaking Change
 
-Use this template when you want:
-
-- A terminal UI CLI based on React components
-- A clean starting point for command-driven tools
-- A template that already includes contribution, testing, and release conventions
+The old greeting-style contract (`--name` outputting `Hello, <name>`) has been removed. The CLI now runs downloader workflows only.
 
 ## Prerequisites
 
@@ -39,10 +35,11 @@ pnpm build
 node dist/cli.js --name=Jane
 ```
 
-Expected output:
+Then run one of the downloader modes:
 
-```text
-Hello, Jane
+```bash
+node dist/cli.js --url "https://example.com/video/master.m3u8" --out "./video.mp4"
+node dist/cli.js --page-url "https://example.com/watch/123" --key-url "https://example.com/video/ts.key"
 ```
 
 ## CLI Usage
@@ -50,20 +47,31 @@ Hello, Jane
 ### Basic
 
 ```bash
-node dist/cli.js
+node dist/cli.js --url "https://example.com/video/master.m3u8"
 ```
 
-### With Option
+### Page Discovery
 
 ```bash
-node dist/cli.js --name=Jane
+node dist/cli.js --page-url "https://example.com/watch/123"
 ```
 
 ### Option Reference
 
-| Option   | Type     | Default    | Description                  |
-| -------- | -------- | ---------- | ---------------------------- |
-| `--name` | `string` | `Stranger` | Name used in greeting output |
+| Option           | Type      | Default        | Description                                       |
+| ---------------- | --------- | -------------- | ------------------------------------------------- |
+| `--url`          | `string`  | `-`            | Direct m3u8 playlist URL                          |
+| `--page-url`     | `string`  | `-`            | Page URL used for media discovery                 |
+| `--out`          | `string`  | `output.mp4`   | Output mp4 path                                   |
+| `--workdir`      | `string`  | `tmp_download` | Temporary working directory                       |
+| `--concurrency`  | `number`  | `12`           | Concurrent segment downloads                      |
+| `--retries`      | `number`  | `3`            | Retries per request                               |
+| `--timeout`      | `number`  | `15000`        | Timeout per request in milliseconds               |
+| `--referer`      | `string`  | `-`            | Override HTTP Referer header                      |
+| `--script-limit` | `number`  | `20`           | Max scripts fetched during page discovery         |
+| `--sniff`        | `boolean` | `true`         | Enable segment sniffing (`--no-sniff` to disable) |
+| `--max-miss`     | `number`  | `8`            | Stop sniffing after this many misses              |
+| `--key-url`      | `string`  | `-`            | Override AES-128 key URL                          |
 
 ## Development Workflow
 
@@ -72,7 +80,7 @@ node dist/cli.js --name=Jane
 3. Validate repository quality: `pnpm test`
 4. Validate docs pipeline: `pnpm test:docs && pnpm docs:check`
 5. Verify compilation output: `pnpm build`
-6. Smoke run built CLI: `node dist/cli.js --name=Jane`
+6. Smoke run built CLI: `node dist/cli.js --url "https://example.com/video/master.m3u8"`
 
 ## Script Reference
 
@@ -92,11 +100,18 @@ node dist/cli.js --name=Jane
 ## Project Layout
 
 ```text
-react-cli-quick-starter/
+av-downloader/
 ├── source/
-│   ├── app.tsx                  # Ink UI component
 │   ├── cli-metadata.ts          # Shared CLI contract for runtime + docs
 │   └── cli.tsx                  # CLI entrypoint + argument parsing
+│   └── downloader/              # Downloader domain modules
+│       ├── options.ts
+│       ├── discovery.ts
+│       ├── playlist.ts
+│       ├── crypto.ts
+│       ├── sniff.ts
+│       ├── pipeline.ts
+│       └── output.ts
 ├── tests/
 │   ├── cli/
 │   └── docs/

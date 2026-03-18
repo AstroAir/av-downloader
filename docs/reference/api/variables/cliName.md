@@ -1,13 +1,11 @@
-[**react-cli-quick-starter**](../README.md)
+[**av-downloader**](../README.md)
 
 ***
 
-[react-cli-quick-starter](../README.md) / cliName
+[av-downloader](../README.md) / cliName
 
 # Variable: cliName
 
-> `const` **cliName**: `"react-cli-quick-starter"` = `'react-cli-quick-starter'`
+> `const` **cliName**: `"av-downloader"` = `'av-downloader'`
 
-Defined in: [cli-metadata.ts:4](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L4)
-
-Canonical CLI name used by runtime help text and generated docs.
+Defined in: [source/cli-metadata.ts:3](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L3)

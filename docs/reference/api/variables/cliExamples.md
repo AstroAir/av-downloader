@@ -1,11 +1,11 @@
-[**react-cli-quick-starter**](../README.md)
+[**av-downloader**](../README.md)
 
 ***
 
-[react-cli-quick-starter](../README.md) / cliExamples
+[av-downloader](../README.md) / cliExamples
 
 # Variable: cliExamples
 
-> `const` **cliExamples**: readonly \[`"$ react-cli-quick-starter --name=Jane"`, `"Hello, Jane"`\]
+> `const` **cliExamples**: readonly \["$ av-downloader --url \"https://example.com/video/master.m3u8\" --out \"./video.mp4\"", "$ av-downloader --page-url \"https://example.com/watch/123\" --key-url \"https://example.com/video/ts.key\""\]
 
-Defined in: [cli-metadata.ts:25](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L25)
+Defined in: [source/cli-metadata.ts:80](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L80)
