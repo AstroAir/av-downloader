@@ -18,6 +18,7 @@ import {sniffMoreSegments, sortAndDedupeSegments} from './sniff.js';
 import type {
 	DownloadPipelineResult,
 	DownloaderOptions,
+	ExecutionSummary,
 	PipelineLogger,
 	SegmentPlanItem,
 } from './types.js';
@@ -45,6 +46,88 @@ const defaultLogger: PipelineLogger = {
 	},
 };
 
+function toFallbackTsPath(outputPath: string): string {
+	return outputPath.replace(/\.mp4$/i, '') + '.ts';
+}
+
+async function assertWritableOutputs(
+	targets: readonly string[],
+	overwrite: boolean,
+): Promise<void> {
+	if (overwrite) {
+		return;
+	}
+
+	for (const target of new Set(targets)) {
+		try {
+			await fs.access(target);
+			throw new DownloaderRuntimeError(
+				`Refusing to overwrite existing output: ${target}. Re-run with --overwrite to replace it.`,
+			);
+		} catch (error: unknown) {
+			if (
+				error instanceof DownloaderRuntimeError ||
+				(error as NodeJS.ErrnoException)?.code === 'ENOENT'
+			) {
+				if (error instanceof DownloaderRuntimeError) {
+					throw error;
+				}
+				continue;
+			}
+
+			throw error;
+		}
+	}
+}
+
+function applySequenceWindow(
+	segments: readonly SegmentPlanItem[],
+	startSequence: number,
+	endSequence: number,
+): SegmentPlanItem[] {
+	if (startSequence === 0 && endSequence === 0) {
+		return [...segments];
+	}
+
+	const filtered = segments.filter(segment => {
+		if (segment.sequence < startSequence) {
+			return false;
+		}
+
+		if (endSequence > 0 && segment.sequence > endSequence) {
+			return false;
+		}
+
+		return true;
+	});
+
+	if (filtered.length === 0) {
+		const upper = endSequence > 0 ? String(endSequence) : 'infinity';
+		throw new DownloaderRuntimeError(
+			`No segments matched sequence window ${String(startSequence)}..${upper}.`,
+		);
+	}
+
+	return filtered;
+}
+
+function toExecutionSummary(
+	options: DownloaderOptions,
+	finalPath: string,
+): ExecutionSummary {
+	return {
+		network: options.advanced.network,
+		segment: options.advanced.segment,
+		resilience: options.advanced.resilience,
+		output: {
+			overwrite: options.advanced.output.overwrite,
+			keepMergedTs: options.advanced.output.keepMergedTs,
+			requestedPath: options.advanced.output.out,
+			finalPath,
+		},
+	};
+}
+
 export async function runDownloadPipeline(
 	options: DownloaderOptions,
 	dependencies: Partial<PipelineDependencies> = {},
@@ -52,6 +135,7 @@ export async function runDownloadPipeline(
 ): Promise<DownloadPipelineResult> {
 	const deps = {...defaultDependencies, ...dependencies};
 	const retryPolicy = toRetryPolicy(options);
+	const fallbackTsPath = toFallbackTsPath(options.out);
 
 	let playlistUrl = options.url;
 	let playlistText = '';
@@ -87,6 +171,11 @@ export async function runDownloadPipeline(
 	}
 
 	logger.info(`[init] target playlist: ${playlistUrl}`);
+	const ffmpegAvailable = deps.hasFfmpeg();
+	await assertWritableOutputs(
+		ffmpegAvailable ? [options.out] : [options.out, fallbackTsPath],
+		options.overwrite,
+	);
 	await fs.mkdir(options.workdir, {recursive: true});
 	const partsDirectory = path.join(options.workdir, 'parts');
 	await fs.rm(partsDirectory, {recursive: true, force: true});
@@ -132,6 +221,11 @@ export async function runDownloadPipeline(
 	}
 
 	segments = sortAndDedupeSegments(segments);
+	segments = applySequenceWindow(
+		segments,
+		options.startSequence,
+		options.endSequence,
+	);
 	logger.info(`[playlist] final segment count: ${String(segments.length)}`);
 
 	const keyCache = new Map<string, Buffer>();
@@ -193,8 +287,11 @@ export async function runDownloadPipeline(
 	await mergeFilesSequentially(partFiles, mergedTsPath);
 
 	await fs.mkdir(path.dirname(options.out), {recursive: true});
-	if (deps.hasFfmpeg()) {
-		await deps.remuxTsToMp4(mergedTsPath, options.out);
+	if (ffmpegAvailable) {
+		await deps.remuxTsToMp4(mergedTsPath, options.out, options.overwrite);
+		if (!options.keepMergedTs) {
+			await fs.rm(mergedTsPath, {force: true});
+		}
 		logger.info(`[done] MP4 output: ${options.out}`);
 		return {
 			playlistUrl,
@@ -204,11 +301,16 @@ export async function runDownloadPipeline(
 			warnings: {
 				ffmpegUnavailable: false,
 			},
+			executionSummary: toExecutionSummary(options, options.out),
 		};
 	}
 
-	const fallbackTsPath = options.out.replace(/\.mp4$/i, '') + '.ts';
-	await fs.copyFile(mergedTsPath, fallbackTsPath);
+	if (fallbackTsPath !== mergedTsPath) {
+		await fs.copyFile(mergedTsPath, fallbackTsPath);
+	}
+	if (!options.keepMergedTs && fallbackTsPath !== mergedTsPath) {
+		await fs.rm(mergedTsPath, {force: true});
+	}
 	logger.warn('[warn] ffmpeg was not detected; MP4 remux was skipped.');
 	logger.info(`[done] TS output: ${fallbackTsPath}`);
 
@@ -220,5 +322,6 @@ export async function runDownloadPipeline(
 		warnings: {
 			ffmpegUnavailable: true,
 		},
+		executionSummary: toExecutionSummary(options, fallbackTsPath),
 	};
 }

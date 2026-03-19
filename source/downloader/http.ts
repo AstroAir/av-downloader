@@ -18,6 +18,7 @@ export async function fetchWithRetry(
 		try {
 			const headers = {
 				...(retryPolicy.referer ? {Referer: retryPolicy.referer} : {}),
+				...(retryPolicy.userAgent ? {'User-Agent': retryPolicy.userAgent} : {}),
 				...init.headers,
 			};
 			const response = await fetch(url, {
@@ -40,7 +41,7 @@ export async function fetchWithRetry(
 				);
 
 				if (maybeRetry && attempt < retryPolicy.retries) {
-					await sleep(250 * (attempt + 1));
+					await sleep(retryPolicy.backoffMs * (attempt + 1));
 					continue;
 				}
 
@@ -52,7 +53,7 @@ export async function fetchWithRetry(
 			clearTimeout(timer);
 			lastError = error;
 			if (attempt < retryPolicy.retries) {
-				await sleep(250 * (attempt + 1));
+				await sleep(retryPolicy.backoffMs * (attempt + 1));
 				continue;
 			}
 		}

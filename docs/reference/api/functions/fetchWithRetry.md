@@ -8,7 +8,7 @@
 
 > **fetchWithRetry**(`url`, `init`, `retryPolicy`): `Promise`\<`Response`\>
 
-Defined in: source/downloader/http.ts:5
+Defined in: [source/downloader/http.ts:5](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/http.ts#L5)
 
 ## Parameters
 

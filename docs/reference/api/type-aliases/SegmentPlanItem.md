@@ -8,7 +8,7 @@
 
 > **SegmentPlanItem** = `object`
 
-Defined in: source/downloader/types.ts:28
+Defined in: [source/downloader/types.ts:83](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L83)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: source/downloader/types.ts:28
 
 > `readonly` **key**: [`SegmentKeyInfo`](SegmentKeyInfo.md) \| `null`
 
-Defined in: source/downloader/types.ts:32
+Defined in: [source/downloader/types.ts:87](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L87)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: source/downloader/types.ts:32
 
 > `readonly` **order**: `number`
 
-Defined in: source/downloader/types.ts:31
+Defined in: [source/downloader/types.ts:86](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L86)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: source/downloader/types.ts:31
 
 > `readonly` **sequence**: `number`
 
-Defined in: source/downloader/types.ts:30
+Defined in: [source/downloader/types.ts:85](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L85)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: source/downloader/types.ts:30
 
 > `readonly` **url**: `string`
 
-Defined in: source/downloader/types.ts:29
+Defined in: [source/downloader/types.ts:84](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L84)

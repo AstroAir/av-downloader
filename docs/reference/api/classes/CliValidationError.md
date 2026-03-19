@@ -6,7 +6,7 @@
 
 # Class: CliValidationError
 
-Defined in: source/downloader/errors.ts:1
+Defined in: [source/downloader/errors.ts:1](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L1)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: source/downloader/errors.ts:1
 
 > **new CliValidationError**(`message`): `CliValidationError`
 
-Defined in: source/downloader/errors.ts:4
+Defined in: [source/downloader/errors.ts:4](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L4)
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > `readonly` **code**: `"CLI_VALIDATION_ERROR"` = `'CLI_VALIDATION_ERROR'`
 
-Defined in: source/downloader/errors.ts:2
+Defined in: [source/downloader/errors.ts:2](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L2)
 
 ***
 

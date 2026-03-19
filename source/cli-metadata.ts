@@ -53,6 +53,11 @@ export const cliFlags = {
 		type: 'string',
 		description: 'Override HTTP Referer header.',
 	},
+	userAgent: {
+		type: 'string',
+		description: 'Override HTTP User-Agent header.',
+		default: downloaderDefaults.userAgent,
+	},
 	scriptLimit: {
 		type: 'number',
 		description: 'Max script files inspected during page discovery.',
@@ -68,6 +73,33 @@ export const cliFlags = {
 		type: 'number',
 		description: 'Stop sniffing after this many misses.',
 		default: downloaderDefaults.maxMisses,
+	},
+	retryBackoff: {
+		type: 'number',
+		description: 'Base backoff delay in milliseconds for retries (>=0).',
+		default: downloaderDefaults.retryBackoffMs,
+	},
+	startSequence: {
+		type: 'number',
+		description: 'Optional starting segment sequence filter (>=0).',
+		default: downloaderDefaults.startSequence,
+	},
+	endSequence: {
+		type: 'number',
+		description: 'Optional ending segment sequence filter (>=0).',
+		default: downloaderDefaults.endSequence,
+	},
+	overwrite: {
+		type: 'boolean',
+		description:
+			'Allow replacing an existing output file. Use --no-overwrite to enforce safe writes.',
+		default: downloaderDefaults.overwrite,
+	},
+	keepMergedTs: {
+		type: 'boolean',
+		description:
+			'Keep merged.ts in workdir after completion for debugging or remux replay.',
+		default: downloaderDefaults.keepMergedTs,
 	},
 	keyUrl: {
 		type: 'string',
@@ -114,6 +146,11 @@ Inputs
 Output Modes
 	Interactive TTY: live progress and status UI.
 	Non-interactive/CI: deterministic summary lines for logs and automation.
+
+Advanced Parameter Groups
+	Network: --timeout --retries --retry-backoff --referer --user-agent
+	Segments: --sniff --max-miss --start-sequence --end-sequence
+	Output: --out --workdir --overwrite --keep-merged-ts
 
 Options
 ${optionLines}

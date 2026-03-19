@@ -8,7 +8,7 @@
 
 > **parseIv**(`ivText`): `Buffer`\<`ArrayBufferLike`\> \| `null`
 
-Defined in: source/downloader/crypto.ts:20
+Defined in: [source/downloader/crypto.ts:20](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/crypto.ts#L20)
 
 ## Parameters
 

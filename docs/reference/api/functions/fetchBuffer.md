@@ -8,7 +8,7 @@
 
 > **fetchBuffer**(`url`, `retryPolicy`): `Promise`\<`Buffer`\<`ArrayBufferLike`\>\>
 
-Defined in: source/downloader/http.ts:72
+Defined in: [source/downloader/http.ts:73](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/http.ts#L73)
 
 ## Parameters
 

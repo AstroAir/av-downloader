@@ -7,9 +7,18 @@ This document explains the current CLI architecture and extension strategy.
 1. User executes `dist/cli.js`
 2. `source/cli.tsx` reads shared CLI metadata from `source/cli-metadata.ts`
 3. `meow` parses arguments using the shared contract
-4. Parsed flags are transformed into app props
-5. `render(<App ... />)` mounts Ink UI
-6. `source/app.tsx` returns terminal output
+4. Non-interactive mode resolves flags with `parseDownloaderOptions` and runs pipeline directly
+5. Interactive mode enters a transition-safe workflow: `input -> configure -> review -> run -> recover -> complete`
+6. Pipeline events are rendered by Ink surfaces in `source/app.tsx` through `source/cli-ui/state.ts`
+
+## Advanced Parameter Groups
+
+- Network: `--concurrency`, `--timeout`, `--referer`, `--user-agent`
+- Resilience: `--retries`, `--retry-backoff`
+- Segment: `--sniff`, `--max-miss`, `--script-limit`, `--start-sequence`, `--end-sequence`
+- Output: `--out`, `--workdir`, `--overwrite`, `--keep-merged-ts`
+
+`parseDownloaderOptions` is the only normalization entrypoint, and it merges CLI flags with interactive edits into one runtime contract.
 
 ## Separation of Concerns
 
@@ -47,6 +56,7 @@ Should avoid:
 - Keep UI components pure and prop-driven.
 - Make help/usage text match actual behavior.
 - Keep runtime help and generated docs sourced from the same metadata.
+- Keep interactive keyboard behavior deterministic: tab/focus order, cancel, submit, and recovery actions must remain stable.
 
 ## Extension Pattern
 

@@ -8,7 +8,7 @@
 
 > **MasterPlaylistVariant** = `object`
 
-Defined in: source/downloader/types.ts:35
+Defined in: [source/downloader/types.ts:90](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L90)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: source/downloader/types.ts:35
 
 > `readonly` **bandwidth**: `number`
 
-Defined in: source/downloader/types.ts:37
+Defined in: [source/downloader/types.ts:92](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L92)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: source/downloader/types.ts:37
 
 > `readonly` **resolution**: `string`
 
-Defined in: source/downloader/types.ts:38
+Defined in: [source/downloader/types.ts:93](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L93)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: source/downloader/types.ts:38
 
 > `readonly` **url**: `string`
 
-Defined in: source/downloader/types.ts:36
+Defined in: [source/downloader/types.ts:91](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L91)

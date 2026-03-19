@@ -15,6 +15,7 @@ function makeState(partial: Partial<CliUiState>): CliUiState {
 		messages: [],
 		errorMessage: '',
 		ffmpegUnavailable: false,
+		executionSummary: null,
 		...partial,
 	};
 }

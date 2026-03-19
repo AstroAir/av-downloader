@@ -8,7 +8,7 @@
 
 > **mergeFilesSequentially**(`inputFiles`, `outputFile`): `Promise`\<`void`\>
 
-Defined in: source/downloader/output.ts:4
+Defined in: [source/downloader/output.ts:4](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/output.ts#L4)
 
 ## Parameters
 

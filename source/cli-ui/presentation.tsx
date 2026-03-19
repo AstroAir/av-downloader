@@ -108,6 +108,20 @@ export function ResultSummary({state}: {readonly state: CliUiState}) {
 							? ' ffmpeg unavailable; emitted TS fallback.'
 							: ' remuxed to MP4.'}
 					</Text>
+					{state.executionSummary ? (
+						<>
+							<Text>
+								Applied output options: overwrite=
+								{String(state.executionSummary.output.overwrite)}, keepMergedTs=
+								{String(state.executionSummary.output.keepMergedTs)}
+							</Text>
+							<Text>
+								Applied sequence window:{' '}
+								{String(state.executionSummary.segment.startSequence)}-
+								{String(state.executionSummary.segment.endSequence)}
+							</Text>
+						</>
+					) : null}
 				</>
 			)}
 		</Box>

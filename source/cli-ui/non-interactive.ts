@@ -18,6 +18,19 @@ export function printNonInteractiveSummary(
 	console.log(`[summary] playlist: ${result.playlistUrl}`);
 	console.log(`[summary] segments: ${String(result.segmentCount)}`);
 	console.log(`[summary] output: ${result.outputPath}`);
+	console.log(
+		`[summary] overwrite: ${String(result.executionSummary.output.overwrite)}`,
+	);
+	console.log(
+		`[summary] keep-merged-ts: ${String(
+			result.executionSummary.output.keepMergedTs,
+		)}`,
+	);
+	console.log(
+		`[summary] sequence-window: ${String(
+			result.executionSummary.segment.startSequence,
+		)}-${String(result.executionSummary.segment.endSequence)}`,
+	);
 	if (result.warnings.ffmpegUnavailable) {
 		console.warn('[summary] ffmpeg was unavailable, output was kept as .ts');
 	}

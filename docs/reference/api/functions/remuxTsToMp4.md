@@ -6,9 +6,9 @@
 
 # Function: remuxTsToMp4()
 
-> **remuxTsToMp4**(`tsPath`, `mp4Path`, `platform?`): `Promise`\<`void`\>
+> **remuxTsToMp4**(`tsPath`, `mp4Path`, `overwrite?`, `platform?`): `Promise`\<`void`\>
 
-Defined in: source/downloader/output.ts:26
+Defined in: [source/downloader/output.ts:26](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/output.ts#L26)
 
 ## Parameters
 
@@ -19,6 +19,10 @@ Defined in: source/downloader/output.ts:26
 ### mp4Path
 
 `string`
+
+### overwrite?
+
+`boolean` = `true`
 
 ### platform?
 

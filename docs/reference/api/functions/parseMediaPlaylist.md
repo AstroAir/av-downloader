@@ -8,7 +8,7 @@
 
 > **parseMediaPlaylist**(`playlistText`, `playlistUrl`): [`MediaPlaylistParseResult`](../type-aliases/MediaPlaylistParseResult.md)
 
-Defined in: source/downloader/playlist.ts:70
+Defined in: [source/downloader/playlist.ts:70](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/playlist.ts#L70)
 
 ## Parameters
 

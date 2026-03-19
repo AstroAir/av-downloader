@@ -8,7 +8,7 @@
 
 > **parseMasterPlaylist**(`playlistText`, `playlistUrl`): [`MasterPlaylistVariant`](../type-aliases/MasterPlaylistVariant.md) \| `null`
 
-Defined in: source/downloader/playlist.ts:30
+Defined in: [source/downloader/playlist.ts:30](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/playlist.ts#L30)
 
 ## Parameters
 

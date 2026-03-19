@@ -70,6 +70,7 @@ export function createInitialUiState(mode: CliUiMode): CliUiState {
 		messages: [],
 		errorMessage: '',
 		ffmpegUnavailable: false,
+		executionSummary: null,
 	};
 }
 
@@ -85,6 +86,7 @@ function applyResultToState(
 		segmentCount: result.segmentCount,
 		downloadedSegments: result.segmentCount,
 		ffmpegUnavailable: result.warnings.ffmpegUnavailable,
+		executionSummary: result.executionSummary,
 		messages: toMessageWindow(
 			state.messages,
 			`[summary] output: ${result.outputPath}`,

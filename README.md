@@ -32,7 +32,7 @@ npm install -g pnpm
 ```bash
 pnpm install
 pnpm build
-node dist/cli.js --name=Jane
+node dist/cli.js --url "https://example.com/video/master.m3u8"
 ```
 
 Then run one of the downloader modes:
@@ -68,9 +68,15 @@ node dist/cli.js --page-url "https://example.com/watch/123"
 | `--retries`      | `number`  | `3`            | Retries per request                               |
 | `--timeout`      | `number`  | `15000`        | Timeout per request in milliseconds               |
 | `--referer`      | `string`  | `-`            | Override HTTP Referer header                      |
+| `--user-agent`   | `string`  | `av-downloader/0.0` | Override HTTP User-Agent header               |
 | `--script-limit` | `number`  | `20`           | Max scripts fetched during page discovery         |
 | `--sniff`        | `boolean` | `true`         | Enable segment sniffing (`--no-sniff` to disable) |
 | `--max-miss`     | `number`  | `8`            | Stop sniffing after this many misses              |
+| `--retry-backoff`| `number`  | `250`          | Base backoff delay in milliseconds                |
+| `--start-sequence`| `number` | `0`            | Sequence lower bound filter (`0` means disabled)  |
+| `--end-sequence` | `number`  | `0`            | Sequence upper bound filter (`0` means disabled)  |
+| `--overwrite`    | `boolean` | `false`        | Allow replacing existing output files             |
+| `--keep-merged-ts` | `boolean` | `false`      | Keep `merged.ts` in workdir after completion      |
 | `--key-url`      | `string`  | `-`            | Override AES-128 key URL                          |
 
 ## Development Workflow

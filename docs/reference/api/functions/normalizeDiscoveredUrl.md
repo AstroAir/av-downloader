@@ -8,7 +8,7 @@
 
 > **normalizeDiscoveredUrl**(`rawValue`, `baseUrl`): `string`
 
-Defined in: source/downloader/url.ts:1
+Defined in: [source/downloader/url.ts:1](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/url.ts#L1)
 
 ## Parameters
 

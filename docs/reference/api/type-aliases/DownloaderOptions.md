@@ -8,15 +8,39 @@
 
 > **DownloaderOptions** = `object`
 
-Defined in: source/downloader/types.ts:7
+Defined in: [source/downloader/types.ts:43](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L43)
 
 ## Properties
+
+### advanced
+
+> `readonly` **advanced**: [`AdvancedOptions`](AdvancedOptions.md)
+
+Defined in: [source/downloader/types.ts:47](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L47)
+
+***
 
 ### concurrency
 
 > `readonly` **concurrency**: `number`
 
-Defined in: source/downloader/types.ts:14
+Defined in: [source/downloader/types.ts:51](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L51)
+
+***
+
+### endSequence
+
+> `readonly` **endSequence**: `number`
+
+Defined in: [source/downloader/types.ts:60](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L60)
+
+***
+
+### keepMergedTs
+
+> `readonly` **keepMergedTs**: `boolean`
+
+Defined in: [source/downloader/types.ts:62](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L62)
 
 ***
 
@@ -24,7 +48,7 @@ Defined in: source/downloader/types.ts:14
 
 > `readonly` **keyUrl**: `string`
 
-Defined in: source/downloader/types.ts:12
+Defined in: [source/downloader/types.ts:46](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L46)
 
 ***
 
@@ -32,7 +56,7 @@ Defined in: source/downloader/types.ts:12
 
 > `readonly` **maxMisses**: `number`
 
-Defined in: source/downloader/types.ts:18
+Defined in: [source/downloader/types.ts:57](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L57)
 
 ***
 
@@ -40,7 +64,15 @@ Defined in: source/downloader/types.ts:18
 
 > `readonly` **out**: `string`
 
-Defined in: source/downloader/types.ts:10
+Defined in: [source/downloader/types.ts:48](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L48)
+
+***
+
+### overwrite
+
+> `readonly` **overwrite**: `boolean`
+
+Defined in: [source/downloader/types.ts:61](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L61)
 
 ***
 
@@ -48,7 +80,7 @@ Defined in: source/downloader/types.ts:10
 
 > `readonly` **pageUrl**: `string`
 
-Defined in: source/downloader/types.ts:9
+Defined in: [source/downloader/types.ts:45](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L45)
 
 ***
 
@@ -56,7 +88,7 @@ Defined in: source/downloader/types.ts:9
 
 > `readonly` **referer**: `string`
 
-Defined in: source/downloader/types.ts:13
+Defined in: [source/downloader/types.ts:50](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L50)
 
 ***
 
@@ -64,7 +96,15 @@ Defined in: source/downloader/types.ts:13
 
 > `readonly` **retries**: `number`
 
-Defined in: source/downloader/types.ts:15
+Defined in: [source/downloader/types.ts:52](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L52)
+
+***
+
+### retryBackoffMs
+
+> `readonly` **retryBackoffMs**: `number`
+
+Defined in: [source/downloader/types.ts:54](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L54)
 
 ***
 
@@ -72,7 +112,7 @@ Defined in: source/downloader/types.ts:15
 
 > `readonly` **scriptLimit**: `number`
 
-Defined in: source/downloader/types.ts:19
+Defined in: [source/downloader/types.ts:58](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L58)
 
 ***
 
@@ -80,7 +120,15 @@ Defined in: source/downloader/types.ts:19
 
 > `readonly` **sniff**: `boolean`
 
-Defined in: source/downloader/types.ts:17
+Defined in: [source/downloader/types.ts:56](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L56)
+
+***
+
+### startSequence
+
+> `readonly` **startSequence**: `number`
+
+Defined in: [source/downloader/types.ts:59](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L59)
 
 ***
 
@@ -88,7 +136,7 @@ Defined in: source/downloader/types.ts:17
 
 > `readonly` **timeoutMs**: `number`
 
-Defined in: source/downloader/types.ts:16
+Defined in: [source/downloader/types.ts:53](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L53)
 
 ***
 
@@ -96,7 +144,15 @@ Defined in: source/downloader/types.ts:16
 
 > `readonly` **url**: `string`
 
-Defined in: source/downloader/types.ts:8
+Defined in: [source/downloader/types.ts:44](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L44)
+
+***
+
+### userAgent
+
+> `readonly` **userAgent**: `string`
+
+Defined in: [source/downloader/types.ts:55](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L55)
 
 ***
 
@@ -104,4 +160,4 @@ Defined in: source/downloader/types.ts:8
 
 > `readonly` **workdir**: `string`
 
-Defined in: source/downloader/types.ts:11
+Defined in: [source/downloader/types.ts:49](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L49)

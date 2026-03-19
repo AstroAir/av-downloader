@@ -8,7 +8,7 @@
 
 > **mapLimit**\<`TItem`, `TResult`\>(`items`, `limit`, `mapper`): `Promise`\<`TResult`[]\>
 
-Defined in: source/downloader/shared.ts:7
+Defined in: [source/downloader/shared.ts:7](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/shared.ts#L7)
 
 ## Type Parameters
 

@@ -34,13 +34,19 @@ export {hasFfmpeg, mergeFilesSequentially, remuxTsToMp4} from './output.js';
 export {fetchBuffer, fetchText, fetchWithRetry} from './http.js';
 export {mapLimit, sleep} from './shared.js';
 export type {
+	AdvancedOptions,
+	ExecutionSummary,
 	DiscoveryResult,
 	DownloadPipelineResult,
 	DownloaderOptions,
+	NetworkOptions,
 	MasterPlaylistVariant,
 	MediaPlaylistParseResult,
+	OutputOptions,
 	PipelineLogger,
+	ResilienceOptions,
 	RetryPolicy,
+	SegmentOptions,
 	SegmentKeyInfo,
 	SegmentPlanItem,
 } from './types.js';

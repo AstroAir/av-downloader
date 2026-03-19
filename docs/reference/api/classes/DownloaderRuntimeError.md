@@ -6,7 +6,7 @@
 
 # Class: DownloaderRuntimeError
 
-Defined in: source/downloader/errors.ts:33
+Defined in: [source/downloader/errors.ts:33](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L33)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: source/downloader/errors.ts:33
 
 > **new DownloaderRuntimeError**(`message`): `DownloaderRuntimeError`
 
-Defined in: source/downloader/errors.ts:36
+Defined in: [source/downloader/errors.ts:36](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L36)
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > `readonly` **code**: `"DOWNLOADER_RUNTIME_ERROR"` = `'DOWNLOADER_RUNTIME_ERROR'`
 
-Defined in: source/downloader/errors.ts:34
+Defined in: [source/downloader/errors.ts:34](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L34)
 
 ***
 

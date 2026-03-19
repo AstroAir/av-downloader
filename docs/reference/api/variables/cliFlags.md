@@ -32,6 +32,38 @@ Defined in: [source/cli-metadata.ts:12](https://github.com/AstroAir/react-cli-qu
 
 > `readonly` **type**: `"number"` = `'number'`
 
+### endSequence
+
+> `readonly` **endSequence**: `object`
+
+#### endSequence.default
+
+> `readonly` **default**: `0` = `downloaderDefaults.endSequence`
+
+#### endSequence.description
+
+> `readonly` **description**: `"Optional ending segment sequence filter (>=0)."` = `'Optional ending segment sequence filter (>=0).'`
+
+#### endSequence.type
+
+> `readonly` **type**: `"number"` = `'number'`
+
+### keepMergedTs
+
+> `readonly` **keepMergedTs**: `object`
+
+#### keepMergedTs.default
+
+> `readonly` **default**: `false` = `downloaderDefaults.keepMergedTs`
+
+#### keepMergedTs.description
+
+> `readonly` **description**: `"Keep merged.ts in workdir after completion for debugging or remux replay."` = `'Keep merged.ts in workdir after completion for debugging or remux replay.'`
+
+#### keepMergedTs.type
+
+> `readonly` **type**: `"boolean"` = `'boolean'`
+
 ### keyUrl
 
 > `readonly` **keyUrl**: `object`
@@ -80,6 +112,22 @@ Defined in: [source/cli-metadata.ts:12](https://github.com/AstroAir/react-cli-qu
 
 > `readonly` **type**: `"string"` = `'string'`
 
+### overwrite
+
+> `readonly` **overwrite**: `object`
+
+#### overwrite.default
+
+> `readonly` **default**: `false` = `downloaderDefaults.overwrite`
+
+#### overwrite.description
+
+> `readonly` **description**: `"Allow replacing an existing output file. Use --no-overwrite to enforce safe writes."` = `'Allow replacing an existing output file. Use --no-overwrite to enforce safe writes.'`
+
+#### overwrite.type
+
+> `readonly` **type**: `"boolean"` = `'boolean'`
+
 ### pageUrl
 
 > `readonly` **pageUrl**: `object`
@@ -124,6 +172,22 @@ Defined in: [source/cli-metadata.ts:12](https://github.com/AstroAir/react-cli-qu
 
 > `readonly` **type**: `"number"` = `'number'`
 
+### retryBackoff
+
+> `readonly` **retryBackoff**: `object`
+
+#### retryBackoff.default
+
+> `readonly` **default**: `250` = `downloaderDefaults.retryBackoffMs`
+
+#### retryBackoff.description
+
+> `readonly` **description**: `"Base backoff delay in milliseconds for retries (>=0)."` = `'Base backoff delay in milliseconds for retries (>=0).'`
+
+#### retryBackoff.type
+
+> `readonly` **type**: `"number"` = `'number'`
+
 ### scriptLimit
 
 > `readonly` **scriptLimit**: `object`
@@ -156,6 +220,22 @@ Defined in: [source/cli-metadata.ts:12](https://github.com/AstroAir/react-cli-qu
 
 > `readonly` **type**: `"boolean"` = `'boolean'`
 
+### startSequence
+
+> `readonly` **startSequence**: `object`
+
+#### startSequence.default
+
+> `readonly` **default**: `0` = `downloaderDefaults.startSequence`
+
+#### startSequence.description
+
+> `readonly` **description**: `"Optional starting segment sequence filter (>=0)."` = `'Optional starting segment sequence filter (>=0).'`
+
+#### startSequence.type
+
+> `readonly` **type**: `"number"` = `'number'`
+
 ### timeout
 
 > `readonly` **timeout**: `object`
@@ -185,6 +265,22 @@ Defined in: [source/cli-metadata.ts:12](https://github.com/AstroAir/react-cli-qu
 > `readonly` **shortFlag**: `"u"` = `'u'`
 
 #### url.type
+
+> `readonly` **type**: `"string"` = `'string'`
+
+### userAgent
+
+> `readonly` **userAgent**: `object`
+
+#### userAgent.default
+
+> `readonly` **default**: `"av-downloader/0.0"` = `downloaderDefaults.userAgent`
+
+#### userAgent.description
+
+> `readonly` **description**: `"Override HTTP User-Agent header."` = `'Override HTTP User-Agent header.'`
+
+#### userAgent.type
 
 > `readonly` **type**: `"string"` = `'string'`
 

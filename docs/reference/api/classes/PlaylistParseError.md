@@ -6,7 +6,7 @@
 
 # Class: PlaylistParseError
 
-Defined in: source/downloader/errors.ts:10
+Defined in: [source/downloader/errors.ts:10](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L10)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: source/downloader/errors.ts:10
 
 > **new PlaylistParseError**(`message`): `PlaylistParseError`
 
-Defined in: source/downloader/errors.ts:13
+Defined in: [source/downloader/errors.ts:13](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L13)
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > `readonly` **code**: `"PLAYLIST_PARSE_ERROR"` = `'PLAYLIST_PARSE_ERROR'`
 
-Defined in: source/downloader/errors.ts:11
+Defined in: [source/downloader/errors.ts:11](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L11)
 
 ***
 

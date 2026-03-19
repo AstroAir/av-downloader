@@ -8,4 +8,4 @@
 
 > **CliFlagName** = keyof *typeof* [`cliFlags`](../variables/cliFlags.md)
 
-Defined in: [source/cli-metadata.ts:78](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L78)
+Defined in: [source/cli-metadata.ts:110](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/cli-metadata.ts#L110)

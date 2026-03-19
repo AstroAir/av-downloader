@@ -8,7 +8,7 @@
 
 > **sequenceToIv**(`sequence`): `Buffer`
 
-Defined in: source/downloader/crypto.ts:41
+Defined in: [source/downloader/crypto.ts:41](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/crypto.ts#L41)
 
 ## Parameters
 

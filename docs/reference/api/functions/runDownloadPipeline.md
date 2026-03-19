@@ -8,7 +8,7 @@
 
 > **runDownloadPipeline**(`options`, `dependencies?`, `logger?`): `Promise`\<[`DownloadPipelineResult`](../type-aliases/DownloadPipelineResult.md)\>
 
-Defined in: source/downloader/pipeline.ts:48
+Defined in: [source/downloader/pipeline.ts:134](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/pipeline.ts#L134)
 
 ## Parameters
 

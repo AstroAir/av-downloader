@@ -8,7 +8,7 @@
 
 > **sniffMoreSegments**(`segments`, `options`): `Promise`\<[`SegmentPlanItem`](../type-aliases/SegmentPlanItem.md)[]\>
 
-Defined in: source/downloader/sniff.ts:160
+Defined in: [source/downloader/sniff.ts:160](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/sniff.ts#L160)
 
 ## Parameters
 

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import meow from 'meow';
 import {buildCliHelpText, cliFlags} from './cli-metadata.js';
-import {collectMissingInput} from './cli-ui/interactive-input.js';
-import {runInteractivePipeline} from './cli-ui/interactive-session.js';
+import {runInteractiveSession} from './cli-ui/interactive-session.js';
 import {
 	isInteractiveTerminal,
 	printNonInteractiveSummary,
@@ -49,6 +48,10 @@ const cli = meow(buildCliHelpText(), {
 		referer: {
 			type: cliFlags.referer.type,
 		},
+		userAgent: {
+			type: cliFlags.userAgent.type,
+			default: cliFlags.userAgent.default,
+		},
 		scriptLimit: {
 			type: cliFlags.scriptLimit.type,
 			default: cliFlags.scriptLimit.default,
@@ -61,6 +64,26 @@ const cli = meow(buildCliHelpText(), {
 			type: cliFlags.maxMiss.type,
 			default: cliFlags.maxMiss.default,
 		},
+		retryBackoff: {
+			type: cliFlags.retryBackoff.type,
+			default: cliFlags.retryBackoff.default,
+		},
+		startSequence: {
+			type: cliFlags.startSequence.type,
+			default: cliFlags.startSequence.default,
+		},
+		endSequence: {
+			type: cliFlags.endSequence.type,
+			default: cliFlags.endSequence.default,
+		},
+		overwrite: {
+			type: cliFlags.overwrite.type,
+			default: cliFlags.overwrite.default,
+		},
+		keepMergedTs: {
+			type: cliFlags.keepMergedTs.type,
+			default: cliFlags.keepMergedTs.default,
+		},
 		keyUrl: {
 			type: cliFlags.keyUrl.type,
 		},
@@ -69,12 +92,11 @@ const cli = meow(buildCliHelpText(), {
 
 try {
 	const interactive = isInteractiveTerminal();
-	const flags = interactive ? await collectMissingInput(cli.flags) : cli.flags;
-	const options = parseDownloaderOptions(flags);
 
 	if (interactive) {
-		await runInteractivePipeline(options);
+		await runInteractiveSession(cli.flags);
 	} else {
+		const options = parseDownloaderOptions(cli.flags);
 		const result = await runDownloadPipeline(options, {}, silentPipelineLogger);
 		printNonInteractiveSummary(result);
 	}

@@ -8,7 +8,7 @@
 
 > **PipelineLogger** = `object`
 
-Defined in: source/downloader/types.ts:67
+Defined in: [source/downloader/types.ts:123](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L123)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: source/downloader/types.ts:67
 
 > `readonly` **info**: (`message`) => `void`
 
-Defined in: source/downloader/types.ts:68
+Defined in: [source/downloader/types.ts:124](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L124)
 
 #### Parameters
 
@@ -34,7 +34,7 @@ Defined in: source/downloader/types.ts:68
 
 > `readonly` **warn**: (`message`) => `void`
 
-Defined in: source/downloader/types.ts:69
+Defined in: [source/downloader/types.ts:125](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L125)
 
 #### Parameters
 

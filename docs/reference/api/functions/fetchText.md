@@ -8,7 +8,7 @@
 
 > **fetchText**(`url`, `retryPolicy`): `Promise`\<`string`\>
 
-Defined in: source/downloader/http.ts:64
+Defined in: [source/downloader/http.ts:65](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/http.ts#L65)
 
 ## Parameters
 

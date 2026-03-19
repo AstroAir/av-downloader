@@ -26,14 +26,25 @@ export function hasFfmpeg(
 export async function remuxTsToMp4(
 	tsPath: string,
 	mp4Path: string,
+	overwrite = true,
 	platform: NodeJS.Platform = process.platform,
 ): Promise<void> {
 	const binary = platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg';
+	const overwriteFlag = overwrite ? '-y' : '-n';
 
 	await new Promise<void>((resolve, reject) => {
 		const child = spawn(
 			binary,
-			['-y', '-i', tsPath, '-c', 'copy', '-bsf:a', 'aac_adtstoasc', mp4Path],
+			[
+				overwriteFlag,
+				'-i',
+				tsPath,
+				'-c',
+				'copy',
+				'-bsf:a',
+				'aac_adtstoasc',
+				mp4Path,
+			],
 			{
 				stdio: 'inherit',
 				shell: false,

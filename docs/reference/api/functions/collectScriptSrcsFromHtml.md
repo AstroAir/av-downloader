@@ -8,7 +8,7 @@
 
 > **collectScriptSrcsFromHtml**(`html`, `pageUrl`): `string`[]
 
-Defined in: source/downloader/url.ts:95
+Defined in: [source/downloader/url.ts:95](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/url.ts#L95)
 
 ## Parameters
 

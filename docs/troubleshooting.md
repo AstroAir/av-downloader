@@ -37,5 +37,17 @@
 ## Smoke output is wrong
 
 - Rebuild with `pnpm build`.
-- Run `node dist/cli.js --name=Jane`.
+- Run `node dist/cli.js --url "https://example.com/video/master.m3u8"`.
 - If the output differs from docs or tests, update the shared CLI contract in `source/cli-metadata.ts` first.
+
+## Interactive Terminal Compatibility
+
+- Interactive mode requires TTY stdin/stdout; CI and piped runs intentionally use deterministic non-interactive summaries.
+- If arrow/tab keys behave unexpectedly, retry in a terminal with standard keyboard escape handling (PowerShell, Windows Terminal, iTerm2, or modern bash/zsh terminals).
+- If you need script-safe output, force non-interactive by piping output or setting `CI=1`.
+
+## Output Fallback and Recovery
+
+- If `ffmpeg` is unavailable, the CLI writes a `.ts` output and prints a deterministic fallback summary line.
+- If output already exists and `--overwrite` is not enabled, the CLI now fails fast before download starts.
+- Use `--keep-merged-ts` when diagnosing remux/fallback problems so intermediate `merged.ts` is preserved.

@@ -1,5 +1,6 @@
 import type {
 	DownloadPipelineResult,
+	ExecutionSummary,
 	PipelineLogger,
 } from '../downloader/types.js';
 
@@ -24,6 +25,7 @@ export type CliUiState = {
 	readonly messages: readonly string[];
 	readonly errorMessage: string;
 	readonly ffmpegUnavailable: boolean;
+	readonly executionSummary: ExecutionSummary | null;
 };
 
 export type CliUiEvent =

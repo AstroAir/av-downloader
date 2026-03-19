@@ -8,7 +8,7 @@
 
 > **DiscoveryResult** = `object`
 
-Defined in: source/downloader/types.ts:46
+Defined in: [source/downloader/types.ts:101](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L101)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: source/downloader/types.ts:46
 
 > `readonly` **keyCandidates**: `string`[]
 
-Defined in: source/downloader/types.ts:51
+Defined in: [source/downloader/types.ts:106](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L106)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: source/downloader/types.ts:51
 
 > `readonly` **keyUrl**: `string`
 
-Defined in: source/downloader/types.ts:49
+Defined in: [source/downloader/types.ts:104](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L104)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: source/downloader/types.ts:49
 
 > `readonly` **m3u8Candidates**: `string`[]
 
-Defined in: source/downloader/types.ts:50
+Defined in: [source/downloader/types.ts:105](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L105)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: source/downloader/types.ts:50
 
 > `readonly` **playlistText**: `string`
 
-Defined in: source/downloader/types.ts:48
+Defined in: [source/downloader/types.ts:103](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L103)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: source/downloader/types.ts:48
 
 > `readonly` **playlistUrl**: `string`
 
-Defined in: source/downloader/types.ts:47
+Defined in: [source/downloader/types.ts:102](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L102)
 
 ***
 
@@ -56,4 +56,4 @@ Defined in: source/downloader/types.ts:47
 
 > `readonly` **tsCandidates**: `string`[]
 
-Defined in: source/downloader/types.ts:52
+Defined in: [source/downloader/types.ts:107](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L107)

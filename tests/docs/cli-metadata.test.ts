@@ -10,6 +10,12 @@ describe('cli metadata', () => {
 			'At least one of --url or --page-url is required.',
 		);
 		expect(helpText).toContain('--key-url  Override AES-128 key URL.');
+		expect(helpText).toContain(
+			'Network: --timeout --retries --retry-backoff --referer --user-agent',
+		);
+		expect(helpText).toContain(
+			'Output: --out --workdir --overwrite --keep-merged-ts',
+		);
 	});
 
 	it('exposes downloader flag defaults and types for docs and runtime usage', () => {
@@ -18,5 +24,7 @@ describe('cli metadata', () => {
 		expect(cliFlags.concurrency.type).toBe('number');
 		expect(cliFlags.concurrency.default).toBe(12);
 		expect(cliFlags.sniff.default).toBe(true);
+		expect(cliFlags.retryBackoff.default).toBe(250);
+		expect(cliFlags.keepMergedTs.default).toBe(false);
 	});
 });

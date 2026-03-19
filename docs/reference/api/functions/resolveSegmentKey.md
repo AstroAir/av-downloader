@@ -8,7 +8,7 @@
 
 > **resolveSegmentKey**(`segment`, `keyUrlOverride`): [`SegmentKeyInfo`](../type-aliases/SegmentKeyInfo.md) \| `null`
 
-Defined in: source/downloader/crypto.ts:61
+Defined in: [source/downloader/crypto.ts:61](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/crypto.ts#L61)
 
 ## Parameters
 

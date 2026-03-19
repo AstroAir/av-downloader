@@ -8,7 +8,7 @@
 
 > **decryptAes128Cbc**(`payload`, `key`, `iv`): `Buffer`
 
-Defined in: source/downloader/crypto.ts:52
+Defined in: [source/downloader/crypto.ts:52](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/crypto.ts#L52)
 
 ## Parameters
 

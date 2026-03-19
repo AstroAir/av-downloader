@@ -6,7 +6,7 @@
 
 # Class: HttpStatusError
 
-Defined in: source/downloader/errors.ts:19
+Defined in: [source/downloader/errors.ts:19](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L19)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: source/downloader/errors.ts:19
 
 > **new HttpStatusError**(`url`, `status`, `body?`): `HttpStatusError`
 
-Defined in: source/downloader/errors.ts:24
+Defined in: [source/downloader/errors.ts:24](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L24)
 
 #### Parameters
 
@@ -48,7 +48,7 @@ Defined in: source/downloader/errors.ts:24
 
 > `readonly` **body**: `string`
 
-Defined in: source/downloader/errors.ts:22
+Defined in: [source/downloader/errors.ts:22](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L22)
 
 ***
 
@@ -104,7 +104,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > `readonly` **status**: `number`
 
-Defined in: source/downloader/errors.ts:21
+Defined in: [source/downloader/errors.ts:21](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L21)
 
 ***
 
@@ -112,7 +112,7 @@ Defined in: source/downloader/errors.ts:21
 
 > `readonly` **url**: `string`
 
-Defined in: source/downloader/errors.ts:20
+Defined in: [source/downloader/errors.ts:20](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/errors.ts#L20)
 
 ***
 

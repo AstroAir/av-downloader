@@ -8,7 +8,7 @@
 
 > **normalizeKeyBuffer**(`keyData`): `Buffer`
 
-Defined in: source/downloader/crypto.ts:5
+Defined in: [source/downloader/crypto.ts:5](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/crypto.ts#L5)
 
 ## Parameters
 

@@ -6,9 +6,9 @@
 
 # Function: parseDownloaderOptions()
 
-> **parseDownloaderOptions**(`flags`, `cwd?`): [`DownloaderOptions`](../type-aliases/DownloaderOptions.md)
+> **parseDownloaderOptions**(`flags`, `cwd?`, `interactiveFlags?`): [`DownloaderOptions`](../type-aliases/DownloaderOptions.md)
 
-Defined in: source/downloader/options.ts:41
+Defined in: [source/downloader/options.ts:168](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/options.ts#L168)
 
 ## Parameters
 
@@ -19,6 +19,10 @@ Defined in: source/downloader/options.ts:41
 ### cwd?
 
 `string` = `...`
+
+### interactiveFlags?
+
+`Partial`\<`CliInputFlags`\> = `{}`
 
 ## Returns
 

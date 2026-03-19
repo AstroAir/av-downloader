@@ -13,16 +13,22 @@
 
 ## Type Aliases
 
+- [AdvancedOptions](type-aliases/AdvancedOptions.md)
 - [CliFlagDefinition](type-aliases/CliFlagDefinition.md)
 - [CliFlagName](type-aliases/CliFlagName.md)
 - [DiscoveryResult](type-aliases/DiscoveryResult.md)
 - [DownloaderOptions](type-aliases/DownloaderOptions.md)
 - [DownloadPipelineResult](type-aliases/DownloadPipelineResult.md)
+- [ExecutionSummary](type-aliases/ExecutionSummary.md)
 - [MasterPlaylistVariant](type-aliases/MasterPlaylistVariant.md)
 - [MediaPlaylistParseResult](type-aliases/MediaPlaylistParseResult.md)
+- [NetworkOptions](type-aliases/NetworkOptions.md)
+- [OutputOptions](type-aliases/OutputOptions.md)
 - [PipelineLogger](type-aliases/PipelineLogger.md)
+- [ResilienceOptions](type-aliases/ResilienceOptions.md)
 - [RetryPolicy](type-aliases/RetryPolicy.md)
 - [SegmentKeyInfo](type-aliases/SegmentKeyInfo.md)
+- [SegmentOptions](type-aliases/SegmentOptions.md)
 - [SegmentPlanItem](type-aliases/SegmentPlanItem.md)
 
 ## Variables

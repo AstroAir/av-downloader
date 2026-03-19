@@ -8,7 +8,7 @@
 
 > **SegmentKeyInfo** = `object`
 
-Defined in: source/downloader/types.ts:22
+Defined in: [source/downloader/types.ts:77](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L77)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: source/downloader/types.ts:22
 
 > `readonly` **iv**: `string`
 
-Defined in: source/downloader/types.ts:25
+Defined in: [source/downloader/types.ts:80](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L80)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: source/downloader/types.ts:25
 
 > `readonly` **method**: `string`
 
-Defined in: source/downloader/types.ts:23
+Defined in: [source/downloader/types.ts:78](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L78)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: source/downloader/types.ts:23
 
 > `readonly` **uri**: `string`
 
-Defined in: source/downloader/types.ts:24
+Defined in: [source/downloader/types.ts:79](https://github.com/AstroAir/react-cli-quick-starter/blob/main/source/downloader/types.ts#L79)

@@ -3,6 +3,7 @@ import type {ReactElement} from 'react';
 import {useMemo, useState} from 'react';
 import type {CliInputFlags} from '../downloader/options.js';
 import {normalizeUrlInput} from '../downloader/options.js';
+import {createInteractiveCancelError} from './cancel.js';
 
 type InputKind = 'url' | 'pageUrl';
 
@@ -167,7 +168,7 @@ export async function collectMissingInput(
 				}}
 				onCancel={() => {
 					app.unmount();
-					reject(new Error('Interactive input was canceled.'));
+					reject(createInteractiveCancelError());
 				}}
 			/>,
 			{patchConsole: false},
